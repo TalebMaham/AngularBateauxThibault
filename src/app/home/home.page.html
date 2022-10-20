@@ -24,19 +24,43 @@
        <li>www.facebook.com</li>
      </ul>
    </div>
-    
-   <p>{{links[1].text}}</p>
-   <p>{{links[2].text}}</p>
-   <p>{{links[3].text}}</p>
-   <p>{{links[4].text}}</p>
-   <p>{{links[5].text}}</p>
+    <ion-grid style="border : 2px solid green">
+      <ion-row style="border : 2px solid blue; margin-bottom : 10px; " >
+        <ion-col style="border : 2px solid orange; margin : 2px ; ">
+          <span><img src="assets/icon/poisson.png" alt="" height="30"></span><ion-button fill = "clear" (click) = onClick(links[0].text)>{{links[0].text}}</ion-button>
+
+        </ion-col>
+      </ion-row>
+      <ion-row style="border : 2px solid blue; margin-bottom : 10px; ">
+        <ion-col style="border : 2px solid orange; margin : 2px ; ">
+          <span><img src="assets/icon/ancre.png" alt="" height="30"></span><ion-button fill = "clear" (click) = onClick(links[1].text)>{{links[1].text}}</ion-button>
+
+        </ion-col>
+        <ion-col style="border : 2px solid orange; margin : 2px ; ">
+          <span><img src="assets/icon/restaurant.png" alt="" height="30"></span><ion-button fill = "clear" (click) = onClick(links[2].text)>{{links[2].text}}</ion-button>
+
+        </ion-col>
+      </ion-row>
+      <ion-row style="border : 2px solid blue; margin-bottom : 10px; ">
+        <ion-col style="border : 2px solid orange; margin : 2px ; ">
+          <span><img src="assets/icon/recette.png" alt="" height="30"></span><ion-button fill = "clear" (click) = onClick(links[3].text)>{{links[3].text}}</ion-button>
+
+        </ion-col>
+
+        <ion-col style="border : 2px solid orange; margin : 2px ; ">
+          <span><img src="assets/icon/tourteau.png" alt="" height="30"></span><ion-button fill = "clear" (click) = onClick(links[4].text)>{{links[4].text}}</ion-button>
+
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
 
 
 
-   <!-- <div *ngFor="let item of links; let {text}=item;">
-    <p>{{text}}</p>
-   </div>
-  </div> -->
+   <!-- <div *ngFor="let item of links; ">
+    <p>{{item.text}}</p>
+   </div> -->
+  </div> 
 
 
   <div>

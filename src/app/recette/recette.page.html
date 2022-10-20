@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> recettes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="width : 50%;  border : 2px solid red">
+    <ion-row style = "position : relative ; margin-bottom: 10px ;"><h3>Nos recettes</h3></ion-row>
+
+    <ion-row  style="border : 2px solid red ;margin-bottom : 5px  ; ">
+        <ion-col style = "border : 2px solid orange ; margin-left : 5px ; ">
+         <span><img src="assets/icon/homardRecette_icon.png" height="30"></span> <ion-button fill = "clear" (click)= "onClickRecette('homard')">Homard</ion-button>
+            
+        </ion-col>
+
+        <ion-col style = "border : 2px solid orange ; margin-left : 5px ; ">
+          <span><img src="assets/icon/saintJacques_icon.png" height="30"></span><ion-button fill = "clear" (click)= "onClickRecette('jacques')">St Jacques </ion-button>
+
+        </ion-col>
+    </ion-row>
+   
+
+    <ion-row style="border : 2px solid red ;margin-bottom : 5px  ; ">
+
+      <ion-col style = "border : 2px solid orange ; margin-left : 5px ; ">
+        <span><img src="assets/icon/barRecette_icon.png" height="30"></span><ion-button fill = "clear" (click)= "onClickRecette('bar')">Bar</ion-button>
+
+      </ion-col>
+
+      <ion-col style = "border : 2px solid orange ; margin-left : 5px ; ">
+        <span><img src="assets/icon/poulpe.png" height ="30"></span><ion-button fill = "clear" (click)= "onClickRecette('tourteau')">Tourteau </ion-button>
+
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row style="border : 2px solid red  ;margin-bottom : 5px ; ">
+      <ion-col style = "border : 2px solid orange ; margin-left : 5px ; ">
+       <span><img src="assets/icon/poulpe.png" height ="30"></span> <ion-button fill = "clear" (click)= "onClickRecette('recette')">Recette</ion-button>
+
+      </ion-col>
+
+      <ion-col style = "border : 2px solid orange ; margin-left : 5px ; ">
+        <span><img src="assets/icon/poulpe.png" height ="30"></span><ion-button fill = "clear" (click)= "onClickRecette('recette')">Recette</ion-button>
+
+      </ion-col>
+
+    </ion-row>      
+
+  </ion-grid>
+</ion-content>

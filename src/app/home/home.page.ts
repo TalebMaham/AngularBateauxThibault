@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductsService } from '../services/produits/products.service';
+import { Produit } from '../models/produit';
+
 
 
 
@@ -10,34 +15,30 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   links = [
+ 
     {
-    link:"",
-    text:"Produits et Promotions",
-    img:""
-    }, 
-    {
-      link:"",
+      
       text:"Produits et Promotions",
       img:""
     }, 
     {
-      link:"",
+      
       text:"Bateaux",
       img:""
     }, 
     {
-      link:"",
+      
       text:"Restaurants",
       img:""
     }, 
 
     {
-      link:"",
+      
       text:"Recettes",
       img:""
     },
     {
-      link:"",
+      
       text:"Contact",
       img:""
     } 
@@ -45,12 +46,54 @@ export class HomePage {
 
 
   ]
+
+
+
+
+  list : Produit[]  ; 
   
   
 
   
 
-  constructor() {}
+  constructor(private router : Router, private productService : ProductsService) {
+
+  }
+
+
+  onClick(lien : string )
+  {
+    this.productService.getProducts().subscribe(res => {
+
+      console.log(res) ; 
+    },
+    err => {
+      console.log(err) ; 
+    }
+      )
+    console.log();
+      switch(lien)
+      {
+        
+          case 'Produits et Promotions' : 
+            this.router.navigate(['/produit']);
+            console.log("produit"); 
+            break; 
+          case 'Bateaux' : 
+            this.router.navigate(['/bateau']);
+            break; 
+          case 'Restaurants' : 
+            this.router.navigate(['/restaurant']);
+            break; 
+          case 'Recettes' : 
+            this.router.navigate(['/recette']);
+            break; 
+          case 'Contact' : 
+            this.router.navigate(['/contact']);
+            break; 
+      }
+     
+  }
 
   
 
