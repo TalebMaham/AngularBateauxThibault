@@ -13,7 +13,8 @@ export class PresentationPage implements OnInit {
   presente = new Presente();
   objet : any ; 
   constructor(private router : Router, private route :ActivatedRoute) { 
-
+    
+    console.log(this.router.getCurrentNavigation().extras.state)
     if(this.router.getCurrentNavigation().extras.state){
       this.objet = this.router.getCurrentNavigation().extras.state.recetteName;
       console.log(this.objet);
@@ -36,7 +37,7 @@ export class PresentationPage implements OnInit {
         break;
       case 'bar':
           this.presente.titre = "Bar";
-          this.presente.image ="assets/images/homardRecette@3x.png";
+          this.presente.image ="assets/images/barRecette@3x.png";
           break;
 
       case 'jacques':
@@ -60,7 +61,7 @@ export class PresentationPage implements OnInit {
                 this.presente.image ="assets/images/fousDeLIle@3x.png";
                  break;
 
-       case 'contact':
+       case 'Contact':
               this.presente.titre = "Contact";
               this.presente.image ="assets/images/TIG@3x.png";
               break;

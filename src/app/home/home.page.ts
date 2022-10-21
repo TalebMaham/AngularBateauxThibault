@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsService } from '../services/produits/products.service';
 import { Produit } from '../models/produit';
@@ -63,9 +63,15 @@ export class HomePage {
 
   onClick(lien : string )
   {
+
+    let navigationExtras: NavigationExtras = {
+      state : {
+        recetteName:lien
+      }
+    }
     this.productService.getProducts().subscribe(res => {
 
-      console.log(res) ; 
+    
     },
     err => {
       console.log(err) ; 
@@ -88,8 +94,8 @@ export class HomePage {
           case 'Recettes' : 
             this.router.navigate(['/recette']);
             break; 
-          case 'Contact' : 
-            this.router.navigate(['/contact']);
+          case 'Contact' :        
+            this.router.navigate(['/presentation'], navigationExtras);
             break; 
       }
      
