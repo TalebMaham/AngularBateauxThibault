@@ -4,4 +4,11 @@ export class Presente
     titre : string ; 
     description : string; 
 
+    constructor () 
+    {
+        // this.titre = titre ; 
+        // this.image = image ; 
+        // this.description = descripiton ; 
+    }
+
 }

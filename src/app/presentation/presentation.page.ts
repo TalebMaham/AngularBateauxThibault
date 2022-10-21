@@ -10,7 +10,7 @@ export class PresentationPage implements OnInit {
 
 
   
-  presente : Presente;
+  presente = new Presente();
   objet : any ; 
   constructor(private router : Router, private route :ActivatedRoute) { 
 
@@ -18,7 +18,6 @@ export class PresentationPage implements OnInit {
       this.objet = this.router.getCurrentNavigation().extras.state.recetteName;
       console.log(this.objet);
       this.presenter();
-      this.presente.titre = "Bonjour";
     }
   }
 
@@ -27,43 +26,45 @@ export class PresentationPage implements OnInit {
 
   presenter()
   {
-    // switch(this.objet)
-    // {
-    //   case 'homard':
-    //     this.presente.titre = "Homard";
-    //     this.presente.image ="assets/images/homardRecette@3x.png";
-    //     break;
-    //   case 'bar':
-    //       this.presente.titre = "Bar";
-    //       this.presente.image ="assets/images/homardRecette@3x.png";
-    //       break;
+      console.log("presenter ... ")
 
-    //   case 'jacque':
-    //       this.presente.titre = "Saint Jacques";
-    //       this.presente.image ="assets/images/saintJacques@3x.png";
-    //       break;
+    switch(this.objet)
+    {
+      case 'homard':
+        this.presente.titre = "Homard";
+        this.presente.image ="assets/images/homardRecette@3x.png";
+        break;
+      case 'bar':
+          this.presente.titre = "Bar";
+          this.presente.image ="assets/images/homardRecette@3x.png";
+          break;
+
+      case 'jacques':
+          this.presente.titre = "Saint Jacques";
+          this.presente.image ="assets/images/saintJacques@3x.png";
+          break;
         
-    //   case 'bristo':
-    //       this.presente.titre = "BristoLandais";
-    //       this.presente.image ="assets/images/bristoLandais@3x.png";
-    //       break;
+      case 'bristo':
+          this.presente.titre = "BristoLandais";
+          this.presente.image ="assets/images/bristoLandais@3x.png";
+          break;
 
-    //   case 'gascons':
-    //           this.presente.titre = "Saint Jacques";
-    //           this.presente.image ="assets/images/desGascons@3x.png";
-    //            break;
+      case 'gascons':
+              this.presente.titre = "Saint Jacques";
+              this.presente.image ="assets/images/desGascons@3x.png";
+               break;
 
 
-    //   case 'fou':
-    //             this.presente.titre = "Fou de L'ile";
-    //             this.presente.image ="assets/images/fousDeLIle@3x.png";
-    //              break;
+      case 'fou':
+                this.presente.titre = "Fou de L'ile";
+                this.presente.image ="assets/images/fousDeLIle@3x.png";
+                 break;
 
-    //    case 'contact':
-    //           this.presente.titre = "Contact";
-    //           this.presente.image ="assets/images/TIG@3x.png";
-    //           break;
-    // }
+       case 'contact':
+              this.presente.titre = "Contact";
+              this.presente.image ="assets/images/TIG@3x.png";
+              break;
+    }
   }
   
 }
