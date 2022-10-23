@@ -14,10 +14,10 @@ export class PresentationPage implements OnInit {
   objet : any ; 
   constructor(private router : Router, private route :ActivatedRoute) { 
     
-    console.log(this.router.getCurrentNavigation().extras.state)
+
     if(this.router.getCurrentNavigation().extras.state){
       this.objet = this.router.getCurrentNavigation().extras.state.recetteName;
-      console.log(this.objet);
+   
       this.presenter();
     }
   }

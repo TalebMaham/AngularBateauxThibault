@@ -77,13 +77,27 @@ export class HomePage {
       console.log(err) ; 
     }
       )
-    console.log();
+
       switch(lien)
       {
         
           case 'Produits et Promotions' : 
-            this.router.navigate(['/produit']);
+          this.productService.getProducts().subscribe(res => {
+
+            let navigationExtras: NavigationExtras = {
+              state : {
+                liste :res
+              }
+            }
+
+            this.router.navigate(['/produit'], navigationExtras);
             console.log("produit"); 
+    
+          },
+          err => {
+            console.log(err) ; 
+          }
+            )
             break; 
           case 'Bateaux' : 
             this.router.navigate(['/bateau']);
