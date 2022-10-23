@@ -65,6 +65,16 @@ export class PresentationPage implements OnInit {
               this.presente.titre = "Contact";
               this.presente.image ="assets/images/TIG@3x.png";
               break;
+
+     case 'villa':
+                this.presente.titre = "villa 9 trois";
+                this.presente.image ="assets/images/villa9Trois@3x.png";
+                break;
+
+     case 'landais':
+                  this.presente.titre = "villa 9 trois";
+                  this.presente.image ="assets/images/fousDeLIle@3x.png";
+                  break;
     }
   }
   
