@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
+  }
+
+
+
+  onClickRestaurant(recette : string)
+  {
+    let navigationExtras: NavigationExtras = {
+      state : {
+        recetteName: recette
+      }
+    }
+
+      this.router.navigate(['/presentation'], navigationExtras);
   }
 
 }
